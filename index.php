@@ -258,113 +258,106 @@ $(document).ready(function(){
 
 
   </head>
-  <body>
-      <div id="wrapper">
-      <div id="container">
-      <div id="header">
-      <div id="top">
-          <div class="logo"><p>Groundwave Online Simulator  (NEW! 1.0 beta) </p></div>
-          <div class="meta"><ul><li><a href="http://www.quake0day.com:9090/" target="_blank" class="tooltip"><span class="ui-icon ui-icon-info"></span>About</a></li></ul></div>
-      </div>
-      <div id="navbar">      </div>
-      </div>
+    <body>
+        <div id="wrapper">
+            <div id="container">
+                <div id="header">
+                    <div id="top">
+                        <div class="logo"><p>Groundwave Online Simulator  (NEW! 1.0 beta) </p></div>
+                        <div class="meta"><ul><li><a href="http://www.quake0day.com:9090/" target="_blank" class="tooltip"><span class="ui-icon ui-icon-info"></span>About</a></li></ul></div>
+                    </div>
+                    <div id="navbar">      </div>
+                </div>
 
 
 
 
-    <div id="content">
-       <table class="mainTable" cellpadding="0" cellspacing="0" align="center">
+                <div id="content">
+                    <table class="mainTable" cellpadding="0" cellspacing="0" align="center">
+                        <tr valign="top">
+                            <td style="width:50%; height:80%; padding: 5px;"> 
+                                <div id="map_canvas" class="canvasStyle"></div> 
+                                <fieldset>
+                                    <legend>Terrain Info</legend>
+                                    <div id="chart_div" style="display=none;"  onmouseout="clearMouseMarker()"></div>
+                                </fieldset>
+                            </td>
+                            <td style="padding: 5px;">
+                                <input type="submit" name="add" id="add"  class="button" value="Add Sender and Receiver" />
+                                <input type="submit" name="reset" id="reset" class="button" value="Reset" />
+                                <input type="submit" name="button" id="button" class="button" value="Run Simulation" />
+                                <hr />
+                                <div id="data"></div>
+                                <hr />
 
-    <tr valign="top">
-
-      <td style="width:50%; height:80%; padding: 5px;"> 
-        <div id="map_canvas" class="canvasStyle"></div> 
-         <fieldset>
-             <legend>Terrain Info</legend>
-        <div id="chart_div" style="display=none;"  onmouseout="clearMouseMarker()"></div>
-        </fieldset>
-      </td>
-      <td style="padding: 5px;">
-           <input type="submit" name="add" id="add"  class="button" value="Add Sender and Receiver" />
-        <input type="submit" name="reset" id="reset" class="button" value="Reset" />
-<input type="submit" name="button" id="button" class="button" value="Run Simulation" />
-<hr />
-   <div id="data"></div>
-
-
-   <hr />
-<div class="message information close" id="tips">
-    <h2>Notifications</h2>
-    <p>You can now click SENDER icon to set simulation parameters<br/> Click "Add Sender and Receiver" Button and Drag the icon </p>
-</div>
- <div id="infoPanel">
+                                <div class="message information close" id="tips">
+                                    <h2>Notifications</h2>
+                                    <p>You can now click SENDER icon to set simulation parameters<br/> Click "Add Sender and Receiver" Button and Drag the icon </p>
+                                </div>
+                                
+                                <div id="infoPanel">
+                                    <fieldset>
+                                        <legend>Sender and Receiver Info</legend>
+                                        <div id="sender">
+                                            <b>Sender</b>
+                                            <!--<div id="markerStatus1"><i>Click and drag the marker.</i></div> -->
+                                            <b>Current position:</b>
+                                            <div id="info1"></div>
+                                            <b>Closest matching address:</b>
+                                            <div id="address1"></div>
+                                            </div>
+                                            <div id="receiver">
+                                            <b>Receiver</b>
+                                            <!--<div id="markerStatus2"><i>Click and drag the marker.</i></div>-->
+                                            <b>Current position:</b>
+                                            <div id="info2"></div>
+                                            <b>Closest matching address:</b>
+                                            <div id="address2"></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+            <!--
                      <fieldset>
-             <legend>Sender and Receiver Info</legend>
-               <div id="sender">
-    <b>Sender</b>
-    <!--<div id="markerStatus1"><i>Click and drag the marker.</i></div> -->
-    <b>Current position:</b>
-    <div id="info1"></div>
-    <b>Closest matching address:</b>
-    <div id="address1"></div>
-    </div>
-    <div id="receiver">
-    <b>Receiver</b>
-    <!--<div id="markerStatus2"><i>Click and drag the marker.</i></div>-->
-    <b>Current position:</b>
-    <div id="info2"></div>
-    <b>Closest matching address:</b>
-    <div id="address2"></div>
-    </div>
+                         <legend>Simulation Parameters</legend>
+                         <table class="normal" id="para" cellpadding="0" cellspacing="0" border="0">
+                             <thead>
+                             </thead>
+                             <tbody>
+                                 <tr><td><b>Frequency(MHz):</b></td> <td>1</td></tr> 
+                                 <tr class="odd"><td><b>Polarization:</b></td> <td>Vertical</td></tr>
+                                 <tr><td><b>Sender Antenna Height(m): </b></td> <td>5</td></tr>
+                                 <tr class="odd"><td><b>Receiver Antenna Height(m):</b></td> <td>5</td></tr>
+                                 <tr><td><b>Bandwidth(bps):</b></td> <td>9600</td></tr>
+                                 <span class="validate_error" id="fre_error"></span>
+                             </tbody>
+                         </table>
 
+                       <div id="set">
+            <label for="fre">Frequency(MHz):</label><input class="sf"  name="fre" type="text"  id="fq" value="1" />
+            <label for="pol">Polarization:</label><select name="pol" class="dropdown" id="pol"><option>Vertical</option><option>Horizontal</option></select><br />
+            <label for="hei">Sender Antenna Height(m):</label><input class="sf"  name="hei" type="text"  id="height" value="5" />
+            <label for="heir">Receiver Antenna Height(m):</label><input class="sf"  name="heir" type="text" name="heightr" id="heightr" value="5" /><br />
+            <label for="bandwidth">Bandwidth(bps):</label><input class="sf"  name="bandwidth" type="text" id="bandwidth" value="9600" />
+            <a href="#" id="sav" class="button"><span class="ui-icon ui-icon-check"></span>Set</a><br />
 
-  </fieldset>
-    </div>
-<!--
-         <fieldset>
-             <legend>Simulation Parameters</legend>
-             <table class="normal" id="para" cellpadding="0" cellspacing="0" border="0">
-                 <thead>
-                 </thead>
-                 <tbody>
-                     <tr><td><b>Frequency(MHz):</b></td> <td>1</td></tr> 
-                     <tr class="odd"><td><b>Polarization:</b></td> <td>Vertical</td></tr>
-                     <tr><td><b>Sender Antenna Height(m): </b></td> <td>5</td></tr>
-                     <tr class="odd"><td><b>Receiver Antenna Height(m):</b></td> <td>5</td></tr>
-                     <tr><td><b>Bandwidth(bps):</b></td> <td>9600</td></tr>
-                     <span class="validate_error" id="fre_error"></span>
-                 </tbody>
-             </table>
+            </div>
 
-           <div id="set">
-<label for="fre">Frequency(MHz):</label><input class="sf"  name="fre" type="text"  id="fq" value="1" />
-<label for="pol">Polarization:</label><select name="pol" class="dropdown" id="pol"><option>Vertical</option><option>Horizontal</option></select><br />
-<label for="hei">Sender Antenna Height(m):</label><input class="sf"  name="hei" type="text"  id="height" value="5" />
-<label for="heir">Receiver Antenna Height(m):</label><input class="sf"  name="heir" type="text" name="heightr" id="heightr" value="5" /><br />
-<label for="bandwidth">Bandwidth(bps):</label><input class="sf"  name="bandwidth" type="text" id="bandwidth" value="9600" />
-<a href="#" id="sav" class="button"><span class="ui-icon ui-icon-check"></span>Set</a><br />
+                    </fieldset>
 
-</div>
+            -->
+                                <div id="table_canvas" style="width:100%; height:100%;"></div>
 
-        </fieldset>
+                            </td>
+                        </tr>
 
--->
-        <div id="table_canvas" style="width:100%; height:100%;">
+                    </table> 
+
+                </div>
+                </div> <!--end of content -->
+            </div>
+            <div class="push"></div>
         </div>
-
-      </td>
-    </tr>
-
-  </table> 
-
-  </div>
-  </div> <!--end of content -->
-
-
-  </div>
-  <div class="push"></div>
-  </div>
-  <div id="footer"><p class="mid">&copy; quake0day 2012. All rights reserved.</p></div>
+        <div id="footer"><p class="mid">&copy; quake0day 2012. All rights reserved.</p></div>
   </body>
 
 </html>

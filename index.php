@@ -250,6 +250,8 @@ $(document).ready(function(){
         <script type="text/javascript" src="js/hoverIntent.js"></script>
         <script type="text/javascript" src="js/superfish.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
         <link rel="stylesheet" href="colorbox.css" />
 
         <script src="js/jquery.colorbox.js"></script>

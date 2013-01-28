@@ -133,8 +133,7 @@ $(function () {
 		</script>
 	</head>
 	<body>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 <div id="container2" style="min-width: 400px; height: 400px; margin: 0 auto"></div>

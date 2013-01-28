@@ -321,7 +321,7 @@ function plotElevation(results) {
 	},
 	plotOptions: {
 		areaspline: {
-			fillOpacity: 0.5
+			fillOpacity: 0.5,
 			marker: {
 				enabled: false
 			}

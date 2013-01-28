@@ -251,17 +251,17 @@ function sub_para()
 // and plots the elevation profile on a GViz ColumnChart
 function plotElevation(results) {   
   elevations = results;
-  
+  var data = new Array();
   //var data = new google.visualization.DataTable();
   //data.addColumn('string', 'Sample');
   //data.addColumn('number', 'Elevation');
 
-  //for (var i = 0; i < results.length; i++) {
-	//if(elevations[i].elevation<0){
-		//elevations[i].elevation = 0;
-	//}
-    //data.addRow(['', elevations[i].elevation]);
-  //}
+  for (var i = 0; i < results.length; i++) {
+	if(elevations[i].elevation<0){
+		elevations[i].elevation = 0;
+	}
+    data[i] = elevation[i].elevation;
+  }
   //document.getElementById('chart_div').style.display = 'block'; 
   //chart.draw(data, {
     //width: 512,

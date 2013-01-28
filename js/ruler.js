@@ -269,7 +269,7 @@ function plotElevation(results) {
 	}else if(i==results.length-1){
 		lineofsight[i] = data[i];
 	}else{
-		lineofsight[i] = (data[results.length-1]-data[0])/results.length+data[0]
+		lineofsight[i] = (data[results.length-1]-data[0])/results.length*i+data[0]
 	}
   }
   //document.getElementById('chart_div').style.display = 'block'; 

@@ -263,6 +263,7 @@ function plotElevation(results) {
 	}
     data[i] = elevations[i].elevation;
   }
+  var color = "#00ff00";
   for (var i = 0; i < results.length; i++) {
 	if(i==0){
 		lineofsight[0] = data[0];
@@ -271,6 +272,11 @@ function plotElevation(results) {
 	}else{
 		lineofsight[i] = (data[results.length-1]-data[0])/results.length*i+data[0]
 	}
+	if (lineofsight[i]<data[i]){
+		//line of sight blocked
+		color = "#ff0000",	
+	}
+	
   }
   //document.getElementById('chart_div').style.display = 'block'; 
   //chart.draw(data, {
@@ -334,7 +340,8 @@ function plotElevation(results) {
 			fillOpacity: 0.5,
 			marker: {
 				enabled: false
-			}
+			},
+			color:color
 		},
 		
 		

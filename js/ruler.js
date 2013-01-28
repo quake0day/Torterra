@@ -258,7 +258,7 @@ function plotElevation(results) {
 
   for (var i = 0; i < results.length; i++) {
 	if(elevations[i].elevation<0){
-		elevations[i].elevation = 0;
+		elevations[i].elevation = 15;
 	}
     data[i] = elevations[i].elevation;
   }
@@ -276,9 +276,9 @@ function plotElevation(results) {
 		renderTo: 'chart_div',
 		type: 'areaspline'
 	},
-	//title: {
-	//	text: 'Average fruit consumption during one week'
-	//},
+	title: {
+		text: null
+	},
 	legend: {
 		enabled:false,	
 		//layout: 'vertical',

@@ -252,7 +252,7 @@ function sub_para()
 function plotElevation(results) {   
   elevations = results;
   var data = new Array();
-  var lineogsight = new Array();
+  var lineofsight = new Array();
   //var data = new google.visualization.DataTable();
   //data.addColumn('string', 'Sample');
   //data.addColumn('number', 'Elevation');

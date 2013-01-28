@@ -345,7 +345,7 @@ function plotElevation(results) {
 	},{
 		name:'Terrain',
 		data:lineofsight,
-		type:spline,
+		type: 'spline',
 		color:"#666666"
 	}]
 });

@@ -274,7 +274,7 @@ function plotElevation(results) {
 	}
 	if (lineofsight[i]<data[i]){
 		//line of sight blocked
-		color = "#ff0000",	
+		color = "#ff0000";	
 	}
 	
   }

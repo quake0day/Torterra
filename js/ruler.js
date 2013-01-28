@@ -279,16 +279,17 @@ function plotElevation(results) {
 	//title: {
 	//	text: 'Average fruit consumption during one week'
 	//},
-	//legend: {
-	//layout: 'vertical',
-	//align: 'left',
-	//verticalAlign: 'top',
-	//x: 150,
-	//y: 100,
-	//floating: true,
-	//borderWidth: 1,
-	//backgroundColor: '#FFFFFF'
-	//},
+	legend: {
+		enabled:false,
+		//layout: 'vertical',
+		//align: 'left',
+		//verticalAlign: 'top',
+		//x: 150,
+		//y: 100,
+		//floating: true,
+		//borderWidth: 1,
+		//backgroundColor: '#FFFFFF'
+	},
 	xAxis: {
 		//categories: [
 			//'Monday',

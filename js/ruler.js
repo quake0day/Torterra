@@ -280,7 +280,7 @@ function plotElevation(results) {
 	//	text: 'Average fruit consumption during one week'
 	//},
 	legend: {
-		enabled:false,
+		enabled:false,	
 		//layout: 'vertical',
 		//align: 'left',
 		//verticalAlign: 'top',
@@ -313,8 +313,7 @@ function plotElevation(results) {
 	},
 	tooltip: {
 		formatter: function() {
-			return ''+
-			this.x +': '+ this.y +' m';
+			return ''+ this.y +' m';
 		}
 	},
 	credits: {

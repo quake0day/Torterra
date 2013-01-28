@@ -326,7 +326,7 @@ function plotElevation(results) {
 	},
 	series: [{
 		//name: 'John',
-		data: elevations
+		data: data
 	}]
 });
   

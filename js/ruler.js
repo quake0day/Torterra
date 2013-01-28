@@ -252,6 +252,7 @@ function sub_para()
 function plotElevation(results) {   
   elevations = results;
   var data = new Array();
+  var lineogsight = new Array();
   //var data = new google.visualization.DataTable();
   //data.addColumn('string', 'Sample');
   //data.addColumn('number', 'Elevation');
@@ -261,6 +262,15 @@ function plotElevation(results) {
 		elevations[i].elevation = 15;
 	}
     data[i] = elevations[i].elevation;
+  }
+  for (var i = 0; i < results.length; i++) {
+	if(i==0){
+		lineofsight[0] = data[0];
+	}else if(i==results.length-1){
+		lineofsight[i] = data[i];
+	}else{
+		lineofsight[i] = (data[results.length-1]-data[0])/results.length+data[0]
+	}
   }
   //document.getElementById('chart_div').style.display = 'block'; 
   //chart.draw(data, {
@@ -277,7 +287,7 @@ function plotElevation(results) {
 		type: 'areaspline'
 	},
 	title: {
-		text: null
+		text: null	
 	},
 	legend: {
 		enabled:false,	
@@ -330,8 +340,13 @@ function plotElevation(results) {
 		
 	},
 	series: [{
-		//name: 'John',
+		name: 'Terrain',
 		data: data
+	},{
+		name:'Terrain',
+		data:lineofsight,
+		type:spline,
+		color:"#666666"
 	}]
 });
   

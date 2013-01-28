@@ -258,8 +258,12 @@ function plotElevation(results) {
   //data.addColumn('number', 'Elevation');
 
   for (var i = 0; i < results.length; i++) {
-	if(elevations[i].elevation<0){
-		elevations[i].elevation = 15;
+	if(i==0 && i==results.length-1){
+		if(elevations[i].elevation<0){
+			levations[i].elevation<0 = 20;
+		}else{
+			levations[i].elevation+=20;
+		}
 	}
     data[i] = elevations[i].elevation;
   }
@@ -270,12 +274,13 @@ function plotElevation(results) {
 	}else if(i==results.length-1){
 		lineofsight[i] = data[i];
 	}else{
-		lineofsight[i] = (data[results.length-1]-data[0])/results.length*i+data[0]
+		lineofsight[i] = (data[results.length-1]-data[0])/results.length*i+data[0];
+		if (lineofsight[i]<data[i]){
+			//line of sight blocked
+			color = "#ff0000";	
+		}
 	}
-	if (lineofsight[i]<data[i]){
-		//line of sight blocked
-		color = "#ff0000";	
-	}
+	
 	
   }
   //document.getElementById('chart_div').style.display = 'block'; 

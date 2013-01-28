@@ -260,9 +260,9 @@ function plotElevation(results) {
   for (var i = 0; i < results.length; i++) {
 	if(i==0 && i==results.length-1){
 		if(elevations[i].elevation<0){
-			levations[i].elevation<0 = 20;
+			elevations[i].elevation = 20;
 		}else{
-			levations[i].elevation+=20;
+			elevations[i].elevation+=20;
 		}
 	}
     data[i] = elevations[i].elevation;

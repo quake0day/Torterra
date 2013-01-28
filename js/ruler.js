@@ -262,7 +262,7 @@ function plotElevation(results) {
   }
   var color = "#00ff00";
   for (var i = 0; i < results.length; i++) {
-	if(i==0 && i==results.length-1){
+	if(i==0 || i==results.length-1){
 		if(elevations[i].elevation<0){
 			elevations[i].elevation = 20;
 		}else{

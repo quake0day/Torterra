@@ -258,6 +258,10 @@ function plotElevation(results) {
   //data.addColumn('number', 'Elevation');
 
   for (var i = 0; i < results.length; i++) {
+    data[i] = elevations[i].elevation;
+  }
+  var color = "#00ff00";
+  for (var i = 0; i < results.length; i++) {
 	if(i==0 && i==results.length-1){
 		if(elevations[i].elevation<0){
 			elevations[i].elevation = 20;
@@ -265,10 +269,6 @@ function plotElevation(results) {
 			elevations[i].elevation+=20;
 		}
 	}
-    data[i] = elevations[i].elevation;
-  }
-  var color = "#00ff00";
-  for (var i = 0; i < results.length; i++) {
 	if(i==0){
 		lineofsight[0] = data[0];
 	}else if(i==results.length-1){

@@ -322,7 +322,11 @@ function plotElevation(results) {
 	plotOptions: {
 		areaspline: {
 			fillOpacity: 0.5
+		},
+		marker:{
+			enabled:false
 		}
+		
 	},
 	series: [{
 		//name: 'John',

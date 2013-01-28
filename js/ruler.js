@@ -260,7 +260,7 @@ function plotElevation(results) {
 	if(elevations[i].elevation<0){
 		elevations[i].elevation = 0;
 	}
-    data[i] = elevation[i].elevation;
+    data[i] = elevations[i].elevation;
   }
   //document.getElementById('chart_div').style.display = 'block'; 
   //chart.draw(data, {

@@ -67,7 +67,7 @@ function updateMarkerPosition(latLng,id) {
         latLng.lat(),
             latLng.lng()
             ].join(', ');
-}
+}   
 
 function updateMarkerAddress(str,id) {
     document.getElementById('address'+id).innerHTML = str;

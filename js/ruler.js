@@ -257,6 +257,9 @@ function plotElevation(results) {
   data.addColumn('number', 'Elevation');
 
   for (var i = 0; i < results.length; i++) {
+	if(elevations[i].elevation<0){
+		elevations[i].elevation = 0;
+	}
     data.addRow(['', elevations[i].elevation]);
   }
   document.getElementById('chart_div').style.display = 'block'; 

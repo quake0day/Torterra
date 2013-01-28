@@ -268,13 +268,9 @@ function plotElevation(results) {
 		}else{
 			elevations[i].elevation+=20;
 		}
-	}
-	if(i==0){
-		lineofsight[0] = data[0];
-	}else if(i==results.length-1){
-		lineofsight[i] = data[i];
+		lineofsight[i] = elevations[i].elevation;
 	}else{
-		lineofsight[i] = (data[results.length-1]-data[0])/results.length*i+data[0];
+		lineofsight[i] = (elevations[results.length-1].elevation-elevations[0].elevation)/results.length*i+elevations[0].elevation;
 		if (lineofsight[i]<data[i]){
 			//line of sight blocked
 			color = "#ff0000";	

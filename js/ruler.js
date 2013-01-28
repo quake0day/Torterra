@@ -332,7 +332,7 @@ function plotElevation(results) {
 	},
 	tooltip: {
 		formatter: function() {
-			return ''+ this.y +' m';
+			return ''+ this.y.toFixed(2) +' m';
 		}
 	},
 	credits: {

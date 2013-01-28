@@ -259,15 +259,17 @@ function plotElevation(results) {
 
   for (var i = 0; i < results.length; i++) {
     data[i] = elevations[i].elevation;
-  }
-  var color = "#00ff00";
-  for (var i = 0; i < results.length; i++) {
-	if(i==0 || i==results.length-1){
+    if(i==0 || i==results.length-1){
 		if(elevations[i].elevation<0){
 			elevations[i].elevation = 20;
 		}else{
 			elevations[i].elevation+=20;
 		}
+	}
+  }
+  var color = "#00ff00";
+  for (var i = 0; i < results.length; i++) {
+	if(i==0 || i==results.length-1){
 		lineofsight[i] = elevations[i].elevation;
 	}else{
 		lineofsight[i] = (elevations[results.length-1].elevation-elevations[0].elevation)/results.length*i+elevations[0].elevation;

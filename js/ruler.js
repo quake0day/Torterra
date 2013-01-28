@@ -346,7 +346,10 @@ function plotElevation(results) {
 		name:'Terrain',
 		data:lineofsight,
 		type: 'spline',
-		color:"#666666"
+		color:"#666666",
+		marker:{
+			enabled: false
+		}
 	}]
 });
   

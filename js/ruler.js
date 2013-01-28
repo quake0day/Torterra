@@ -251,25 +251,85 @@ function sub_para()
 // and plots the elevation profile on a GViz ColumnChart
 function plotElevation(results) {   
   elevations = results;
+  
+  //var data = new google.visualization.DataTable();
+  //data.addColumn('string', 'Sample');
+  //data.addColumn('number', 'Elevation');
 
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Sample');
-  data.addColumn('number', 'Elevation');
-
-  for (var i = 0; i < results.length; i++) {
-	if(elevations[i].elevation<0){
-		elevations[i].elevation = 0;
-	}
-    data.addRow(['', elevations[i].elevation]);
-  }
-  document.getElementById('chart_div').style.display = 'block'; 
-  chart.draw(data, {
-    width: 512,
-    height: 200,
-    legend: 'none',
-    titleY: 'Elevation (m)',
-    focusBorderColor: '#00ff00'
-  });
+  //for (var i = 0; i < results.length; i++) {
+	//if(elevations[i].elevation<0){
+		//elevations[i].elevation = 0;
+	//}
+    //data.addRow(['', elevations[i].elevation]);
+  //}
+  //document.getElementById('chart_div').style.display = 'block'; 
+  //chart.draw(data, {
+    //width: 512,
+    //height: 200,
+    //legend: 'none',
+    //titleY: 'Elevation (m)',
+    //focusBorderColor: '#00ff00'
+  //});
+  
+  chart = new Highcharts.Chart({
+	chart: {
+		renderTo: 'chart_div',
+		type: 'areaspline'
+	},
+	//title: {
+	//	text: 'Average fruit consumption during one week'
+	//},
+	//legend: {
+	//layout: 'vertical',
+	//align: 'left',
+	//verticalAlign: 'top',
+	//x: 150,
+	//y: 100,
+	//floating: true,
+	//borderWidth: 1,
+	//backgroundColor: '#FFFFFF'
+	//},
+	xAxis: {
+		//categories: [
+			//'Monday',
+			//'Tuesday',
+			//'Wednesday',
+			//'Thursday',
+			//'Friday',
+			//'Saturday',
+			//'Sunday'
+		//],
+		//plotBands: [{ // visualize the weekend
+			//from: 4.5,
+			//to: 6.5,
+			//color: 'rgba(68, 170, 213, .2)'
+		//}]
+	},
+	yAxis: {
+		title: {
+			text: 'Elevation(m)'
+		}
+	},
+	tooltip: {
+		formatter: function() {
+			return ''+
+			this.x +': '+ this.y +' m';
+		}
+	},
+	credits: {
+		enabled: false
+	},
+	plotOptions: {
+		areaspline: {
+			fillOpacity: 0.5
+		}
+	},
+	series: [{
+		//name: 'John',
+		data: elevations
+	}]
+});
+  
 }
 
 // Trigger the elevation query for point to point

@@ -82,7 +82,7 @@ function initialize() {
 
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    //chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 
 
 
